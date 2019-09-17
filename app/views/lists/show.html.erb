@@ -5,5 +5,39 @@
   <%= @list.list_name %>
 </p>
 
+  <h2>Tasks</h2>
+  <% @list.tasks.each do |task| %>
+    <p>
+      <strong>Task Name:</strong>
+      <%= task.task_name %>
+    </p>
+    
+    <p>
+      <strong>Task:</strong>
+      <%= task.body %>
+    </p>
+
+    <p>
+    <%= link_to 'Destroy Task', [task.list, task],
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+  </p>
+  <% end %>
+
+  <h2>Add a Task:</h2>
+  <%= form_with(model: [ @list, @list.tasks.build ], local: true) do |form| %>
+    <p>
+      <%= form.label :Task %><br>
+      <%= form.text_field :task_name %>
+    </p>
+    <p>
+      <%= form.label :body %><br>
+      <%= form.text_area :body %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+
 <%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>
