@@ -4,6 +4,11 @@ class ListsController < ApplicationController
   def index
     #@lists = List.where user_id: current_user.id
     @lists = current_user.lists
+    respond_to do |format|
+      format.html 
+      format.json
+      format.pdf {render template: 'lists/reporte', pdf: 'Lists reporte'}
+    end
   end
 
   def show
@@ -19,6 +24,7 @@ class ListsController < ApplicationController
   def create
     @list = current_user.lists.new list_params
 
+    
     respond_to do |format|
       if @list.save
         format.html { redirect_to @list, notice: 'List was successfully created.' }
@@ -49,7 +55,7 @@ class ListsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
     def set_list
       @list = List.find(params[:id])
