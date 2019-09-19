@@ -7,7 +7,7 @@ class ListsController < ApplicationController
     respond_to do |format|
       format.html 
       format.json
-      format.pdf {render template: 'lists/reporte', pdf: 'Lists reporte'}
+      format.pdf {render template: 'lists/reporte', pdf: 'Lists PDF'}
     end
   end
 

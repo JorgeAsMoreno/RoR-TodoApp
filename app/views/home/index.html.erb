@@ -1,6 +1,7 @@
-  <h1>Home#index</h1>
+  <h1>Bienvenido <%= current_user.username %> </h1>
   <p>Find me in app/views/home/index.html.erb</p>
   <%= link_to 'Salir', destroy_user_session_path,  method: :delete %>
   <a> <%= link_to 'Check List', controller: 'lists' %> </a>
+  <a> <%= link_to 'Edit Profile', edit_user_registration_path %> </a>
 
 
