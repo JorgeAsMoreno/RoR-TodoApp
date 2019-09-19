@@ -4,6 +4,7 @@ class ListsController < ApplicationController
   def index
     #@lists = List.where user_id: current_user.id
     @lists = current_user.lists
+    
     respond_to do |format|
       format.html 
       format.json

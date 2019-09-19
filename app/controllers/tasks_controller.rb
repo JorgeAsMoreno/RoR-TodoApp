@@ -1,4 +1,9 @@
 class TasksController < ApplicationController
+
+  def index
+    
+  end
+  
   def create
     @list = List.find(params[:list_id])
     @task = @list.tasks.create(task_params)
