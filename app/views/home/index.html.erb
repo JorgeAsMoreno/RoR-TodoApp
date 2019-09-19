@@ -4,4 +4,6 @@
   <a> <%= link_to 'Check List', controller: 'lists' %> </a>
   <a> <%= link_to 'Edit Profile', edit_user_registration_path %> </a>
 
-
+  <% if current_user.profile_image.attached? %> <br/>
+    <%= image_tag current_user.profile_image, style: 'height:100px; width:100px' %>
+  <%end%>
