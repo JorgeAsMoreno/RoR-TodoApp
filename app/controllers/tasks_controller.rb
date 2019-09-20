@@ -1,7 +1,12 @@
 class TasksController < ApplicationController
 
   def index
-    
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @task.to_csv, filename: "List-#{@list.list_name}.csv" }
+    end
   end
   
   def create
