@@ -16,6 +16,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
 
       ## Edit Profile
       t.string :username
+      t.string :description
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
       # t.datetime :current_sign_in_at
