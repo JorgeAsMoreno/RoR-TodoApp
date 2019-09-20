@@ -7,3 +7,8 @@
   <% if current_user.profile_image.attached? %> <br/>
     <%= image_tag current_user.profile_image, style: 'height:100px; width:100px' %>
   <%end%>
+
+  <section>
+    <h4>Description</h4>
+    <p> <%= current_user.description %> </p>
+  </section>
