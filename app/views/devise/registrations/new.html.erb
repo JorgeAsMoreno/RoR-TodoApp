@@ -27,6 +27,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description, autofocus: true, autocomplete: "description" %>
+</div>
+
+  <div class="field">
     <%= f.label :profile_image %><br />
     <%= f.file_field :profile_image %>
   </div>
