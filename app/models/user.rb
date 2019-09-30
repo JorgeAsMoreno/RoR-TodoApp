@@ -6,4 +6,9 @@ class User < ApplicationRecord
   
   has_many :lists
   has_one_attached :profile_image
+  after_create :welcome_email
+  
+  def welcome_email
+    UserMailer.welcome_email(self).deliver
+  end
 end
