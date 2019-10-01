@@ -11,4 +11,5 @@ class User < ApplicationRecord
   def welcome_email
     UserMailerJob.set(wait: 1.minute).perform_later self
   end
+
 end
