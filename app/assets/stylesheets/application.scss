@@ -13,3 +13,13 @@
  */
 
  @import "bootstrap";
+
+.background-image {
+  background: url(https://cdn.dribbble.com/users/24011/screenshots/3683930/grouproom_animace_01j.gif);
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
